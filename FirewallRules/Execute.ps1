@@ -1,10 +1,11 @@
-﻿###Run this if not install Az module##############################################################################################################################################
+###Run this if not install Az module##############################################################################################################################################
 ###Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
+###az extension add -n azure-firewall###
 ##################################################################################################################################################################################
-$Subscription = "<SubscriptionID>"
-$TenantID = "<TenantID>"
-$AzureFirewallName = "AZFirewallName"
-$ResourceGroupName = "AZFirewallRGName"
+$Subscription = "a74bd413-4769-4b0e-80f0-c300bb62cf6e"
+$TenantID = "78f4b8d2-0ebe-4840-8d21-6a71466c644f"
+$AzureFirewallName = "SEA-SHARED-FE-AF"
+$ResourceGroupName = "SEA-SHARED-NETWORK-RG"
 $csv = Import-Csv .\FirewallRules.csv
 $location = "southeastasia"
 az login --allow-no-subscriptions -t $TenantID
